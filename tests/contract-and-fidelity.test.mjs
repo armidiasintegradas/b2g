@@ -3,6 +3,7 @@ import assert from 'node:assert';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -37,9 +38,12 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.strictEqual(sectionsCount, 5, 'Deve conter exatamente 5 seções filhas dentro do <main> (+ 1 header + 1 footer = 7 seções no total)');
   });
 
-  await t.test('2. Logo master correta (public/brand/b2g-logo-oficial.png)', () => {
+  await t.test('2. Logo master correta com validação de SHA-256', () => {
     assert.match(html, /public\/brand\/b2g-logo-oficial\.png/, 'Deve referenciar o master oficial b2g-logo-oficial.png');
-    assert.ok(existsSync(resolve(rootDir, 'public/brand/b2g-logo-oficial.png')), 'Arquivo b2g-logo-oficial.png deve existir fisicamente');
+    const logoPath = resolve(rootDir, 'public/brand/b2g-logo-oficial.png');
+    assert.ok(existsSync(logoPath), 'Arquivo b2g-logo-oficial.png deve existir fisicamente');
+    const logoHash = createHash('sha256').update(readFileSync(logoPath)).digest('hex');
+    assert.strictEqual(logoHash, 'ff9e102e6216d68122496f64097120521fd1b99f9b879118ac661d836062dd8d', 'SHA-256 da logo canônica deve corresponder ao master original homologado');
   });
 
   await t.test('3. Métricas homologadas V1.2 presentes', () => {
@@ -76,9 +80,15 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.match(html, /&copy; 2026 B2G Marketing Digital e Treinamentos\./, 'Deve conter copyright provisório conforme regra');
   });
 
-  await t.test('8. Preservação de HERO_MEDIA_PENDING sem substituição arbitrária', () => {
-    assert.match(html, /hero-media-pending/, 'Deve conter classe hero-media-pending no Hero');
-    assert.doesNotMatch(html, /hero-medica-tablet\.webp/, 'Não deve apontar para asset substituto inexistente');
+  await t.test('8. Fotografia do Hero canônica integrada (public/media/hero-doctor-bg.webp)', () => {
+    assert.match(html, /public\/media\/hero-doctor-bg\.webp/, 'Deve referenciar o asset hero-doctor-bg.webp no Hero');
+    assert.doesNotMatch(html, /hero-media-pending/, 'NÃO deve conter estado pendente hero-media-pending');
+    const heroWebpPath = resolve(rootDir, 'public/media/hero-doctor-bg.webp');
+    assert.ok(existsSync(heroWebpPath), 'Arquivo hero-doctor-bg.webp deve existir fisicamente');
+    const heroOrigPath = resolve(rootDir, 'public/media/hero-doctor-original.png');
+    assert.ok(existsSync(heroOrigPath), 'Arquivo hero-doctor-original.png deve existir fisicamente');
+    const heroOrigHash = createHash('sha256').update(readFileSync(heroOrigPath)).digest('hex');
+    assert.strictEqual(heroOrigHash, '5890d9e1902239814f4e1b91b8d6a3e52beba241fccb55f3a8163685770b42ad', 'SHA-256 do original do hero deve corresponder ao asset master fornecido');
   });
 
   await t.test('9. Ausência estrita de claims excessivos (Final Copy Lock V1.2)', () => {

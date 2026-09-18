@@ -155,16 +155,25 @@
   width: 58%;
   pointer-events: none;
   z-index: 1;
+  overflow: hidden;
 }
 
-/* HERO_MEDIA_PENDING: geometric overlay & dark gradient container */
-.hero-media-pending {
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  opacity: 0.52;
+  display: block;
+}
+
+.hero-bg-overlay {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 70% 40%, rgba(0, 178, 216, 0.08) 0%, transparent 65%),
-    linear-gradient(to right, #080b10 10%, rgba(8, 11, 16, 0.85) 50%, rgba(8, 11, 16, 0.35) 100%);
-  border-left: 1px solid rgba(255, 255, 255, 0.03);
+    linear-gradient(to right, #080b10 0%, rgba(8, 11, 16, 0.75) 45%, rgba(8, 11, 16, 0.25) 85%, rgba(8, 11, 16, 0.45) 100%),
+    linear-gradient(to top, #080b10 0%, transparent 25%),
+    linear-gradient(to bottom, #080b10 0%, transparent 15%);
 }
 
 .hero-content {
