@@ -38,12 +38,30 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.strictEqual(sectionsCount, 5, 'Deve conter exatamente 5 seções filhas dentro do <main> (+ 1 header + 1 footer = 7 seções no total)');
   });
 
-  await t.test('2. Logo master correta com validação de SHA-256', () => {
+  await t.test('2. Logo master correta com validação de SHA-256 e assets de marca/favicon', () => {
     assert.match(html, /public\/brand\/b2g-logo-oficial\.png/, 'Deve referenciar o master oficial b2g-logo-oficial.png');
     const logoPath = resolve(rootDir, 'public/brand/b2g-logo-oficial.png');
     assert.ok(existsSync(logoPath), 'Arquivo b2g-logo-oficial.png deve existir fisicamente');
     const logoHash = createHash('sha256').update(readFileSync(logoPath)).digest('hex');
     assert.strictEqual(logoHash, 'ff9e102e6216d68122496f64097120521fd1b99f9b879118ac661d836062dd8d', 'SHA-256 da logo canônica deve corresponder ao master original homologado');
+
+    // Validação da logo do menu (vetor branco homologado para fundo escuro)
+    assert.match(html, /public\/brand\/b2g-logo-menu\.png/, 'Header deve referenciar b2g-logo-menu.png');
+    const menuLogoPath = resolve(rootDir, 'public/brand/b2g-logo-menu.png');
+    assert.ok(existsSync(menuLogoPath), 'Arquivo b2g-logo-menu.png deve existir fisicamente');
+    const menuLogoHash = createHash('sha256').update(readFileSync(menuLogoPath)).digest('hex');
+    assert.strictEqual(menuLogoHash, 'b0aeae4a0240ff820e2502d44a0dbbb15b9f0d9f564f4aa38269e0b08f238595', 'SHA-256 da logo do menu deve corresponder exatamente ao asset anexo');
+
+    // Validação dos favicons
+    assert.match(html, /<link[^>]*rel="icon"[^>]*href="public\/brand\/favicon-32x32\.png"/, 'Deve conter link para favicon 32x32');
+    assert.match(html, /<link[^>]*rel="icon"[^>]*href="public\/brand\/favicon-16x16\.png"/, 'Deve conter link para favicon 16x16');
+    assert.match(html, /<link[^>]*rel="apple-touch-icon"[^>]*href="public\/brand\/apple-touch-icon\.png"/, 'Deve conter link para apple-touch-icon');
+    assert.match(html, /<link[^>]*rel="shortcut icon"[^>]*href="public\/brand\/favicon\.ico"/, 'Deve conter link para favicon.ico');
+
+    assert.ok(existsSync(resolve(rootDir, 'public/brand/favicon-32x32.png')), 'favicon-32x32.png deve existir');
+    assert.ok(existsSync(resolve(rootDir, 'public/brand/favicon-16x16.png')), 'favicon-16x16.png deve existir');
+    assert.ok(existsSync(resolve(rootDir, 'public/brand/apple-touch-icon.png')), 'apple-touch-icon.png deve existir');
+    assert.ok(existsSync(resolve(rootDir, 'public/brand/favicon.ico')), 'favicon.ico deve existir');
   });
 
   await t.test('3. Métricas homologadas V1.2 presentes', () => {

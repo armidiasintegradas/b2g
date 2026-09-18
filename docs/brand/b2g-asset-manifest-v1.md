@@ -1,12 +1,40 @@
 # B2G — Manifesto de Assets Canônicos V1.2
 **Data de Atualização:** 2026-09-18  
-**Status:** PASS V6 AUDIT — LOGO_GATE = FAIL (ASSET NOT ATTACHED/FOUND ON DISK) / HERO LOCKED
+**Status:** ASSETS ATUALIZADOS — MENU LOGO HOMOLOGADO / FAVICONS GERADOS / HERO LOCKED
 
-Este manifesto registra a identidade técnica e integridade criptográfica (SHA-256) dos arquivos originais e seu status de homologação após a auditoria do Pass V6.
+Este manifesto registra a identidade técnica e integridade criptográfica (SHA-256) dos arquivos originais e seu status de homologação.
 
 ---
 
-## 1. Logo Oficial B2G — Portão Bloqueante (Gate Status)
+## 1. Logo do Menu (Header Navbar) — Homologada
+
+| Atributo | Especificação Canônica |
+| :--- | :--- |
+| **Path no Projeto** | `public/brand/b2g-logo-menu.png` |
+| **Source Original Fornecido** | `media_1789775438266.png` |
+| **Dimensões** | `1024 × 365 px` |
+| **Formato** | PNG RGBA (vetor branco puro com transparência) |
+| **Tamanho** | 34.260 bytes |
+| **SHA-256** | `b0aeae4a0240ff820e2502d44a0dbbb15b9f0d9f564f4aa38269e0b08f238595` |
+| **Status** | **HOMOLOGADO E INTEGRADO NO MENU/HEADER** |
+| **Uso no Layout** | Header navbar com fundo escuro (`height: 26px; width: 73px; object-fit: contain;`) |
+
+---
+
+## 2. Favicons da Marca — Homologados
+
+Gerados a partir do asset vetorial branco canônico:
+
+| Asset | Dimensões | Formato | Path |
+| :--- | :--- | :--- | :--- |
+| **Favicon 16x16** | 16 × 16 px | PNG RGBA | `public/brand/favicon-16x16.png` |
+| **Favicon 32x32** | 32 × 32 px | PNG RGBA | `public/brand/favicon-32x32.png` |
+| **Apple Touch Icon** | 180 × 180 px | PNG RGBA (dark theme `#080b11`) | `public/brand/apple-touch-icon.png` |
+| **Multi-size ICO** | 16, 32, 48 px | ICO | `public/brand/favicon.ico` e `/favicon.ico` |
+
+---
+
+## 3. Logo Master Institucional (Open Graph)
 
 | Atributo | Alvo Requerido pelo Cliente | Asset Atual no Ambiente |
 | :--- | :--- | :--- |
