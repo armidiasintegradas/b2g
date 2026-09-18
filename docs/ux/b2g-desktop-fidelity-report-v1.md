@@ -1,8 +1,11 @@
-# B2G — Relatório de Fidelidade Visual Desktop V1.2
-**Documento Canônico de Validação de Interface**  
-**Data:** 18 de Setembro de 2026  
+# [SUPERSEDED / INVALID FOR FINAL VISUAL LOCK] B2G — Relatório de Fidelidade Visual Desktop V1.2
+> **AVISO:** Este documento foi marcado como **SUPERSEDED / INVALID FOR FINAL VISUAL LOCK** devido ao Hard Reset de Fidelidade contra o Master Stitch V1.2.  
+> Consulte o documento oficial atualizado: `docs/ux/b2g-desktop-fidelity-report-v2.md`.
+
+**Documento Histórico Suplantado**  
+**Data Original:** 18 de Setembro de 2026  
 **Autoridade Visual:** `B2G — MASTER REFERENCE V1.2 — DESKTOP FINAL` (`references/stitch-originals/desktop/b2g-master-v1.2-desktop-final.png`)  
-**Status:** **AUDITADO E HOMOLOGADO — ALINHADO AO STITCH — APTO PARA VISUAL LOCK**
+**Status:** **SUPERSEDED / INVALID FOR FINAL VISUAL LOCK**
 
 ---
 

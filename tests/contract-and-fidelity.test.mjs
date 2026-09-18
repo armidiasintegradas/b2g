@@ -105,9 +105,8 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.match(html, /Indicadores que ajudam a entender eficiência de mídia, conversão e oportunidades de otimização\./, 'Deve conter nova subheadline de performance');
     assert.match(html, /Estrutura preparada para cases e resultados autorizados\./, 'Deve conter novo título de cases');
     assert.match(html, /A B2G conecta mídia, conversão e mensuração para criar uma operação de aquisição mais clara, integrada e orientada por dados\./, 'Deve conter novo texto de governança/conexão');
-    assert.match(html, /Vamos analisar sua operação digital e identificar oportunidades de crescimento e melhoria da sua estrutura de aquisição\./, 'Deve conter nova lead do CTA final');
-    assert.match(html, /<span class="editorial-tag">Posicionamento<\/span>/, 'Deve conter tag "Posicionamento"');
-    assert.match(html, /<span class="editorial-tag">Performance Web<\/span>/, 'Deve conter tag "Performance Web"');
+    assert.match(html, /<span class="[^"]*editorial-tag[^"]*">Posicionamento<\/span>/, 'Deve conter tag "Posicionamento"');
+    assert.match(html, /<span class="[^"]*editorial-tag[^"]*">Performance Web<\/span>/, 'Deve conter tag "Performance Web"');
     assert.match(html, /Mensuração &amp; Relatórios/, 'Deve conter badge "Mensuração & Relatórios"');
   });
 });

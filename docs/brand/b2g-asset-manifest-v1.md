@@ -1,23 +1,22 @@
-# B2G — Manifesto de Assets Canônicos V1.0
-**Data de Homologação:** 2026-09-18
-**Status:** CANONICAL ASSETS LOCKED
+# B2G — Manifesto de Assets Canônicos V1.1
+**Data de Atualização:** 2026-09-18  
+**Status:** HARD RESET AUDIT — LOGO PENDING CLIENT UPLOAD / HERO LOCKED
 
-Este manifesto registra a identidade técnica e integridade criptográfica (SHA-256) dos arquivos originais fornecidos e integrados à landing page da B2G.
+Este manifesto registra a identidade técnica e integridade criptográfica (SHA-256) dos arquivos originais e seu status de homologação.
 
 ---
 
 ## 1. Logo Oficial B2G
 
-| Atributo | Especificação Canônica |
-| :--- | :--- |
-| **Path no Projeto** | `public/brand/b2g-logo-oficial.png` |
-| **Source Original** | `/Users/alexribeiro/Documents/d67191ae-634e-489a-b809-4f6595975263.png` |
-| **Dimensões** | 2172 × 724 px |
-| **Tamanho** | 877.665 bytes |
-| **MIME Type** | `image/png` |
-| **SHA-256 Original** | `ff9e102e6216d68122496f64097120521fd1b99f9b879118ac661d836062dd8d` |
-| **SHA-256 Canônico** | `ff9e102e6216d68122496f64097120521fd1b99f9b879118ac661d836062dd8d` |
-| **Descrição Visual** | Tipografia B2G horizontal em azul com gradiente canônico, asas integradas ao "B", e assinatura inferior "Marketing Digital e Treinamentos". |
+| Atributo | Alvo Requerido pelo Cliente | Asset Atual no Ambiente |
+| :--- | :--- | :--- |
+| **Dimensões** | 2048 × 682 px | 2172 × 724 px |
+| **SHA-256** | `5838127cd2ca9528b31d671d49c1d072ae2b336fe22bc1bc0ad4b590914f0d8c` | `ff9e102e6216d68122496f64097120521fd1b99f9b879118ac661d836062dd8d` |
+| **Status de Homologação** | **PARADA / PENDENTE DE UPLOAD** | Ativo provisório como fallback |
+| **Localização Física** | Não encontrado no disco local | `public/brand/b2g-logo-oficial.png` |
+| **Wrappers Artificiais** | **REMOVIDOS** (sem fundo branco, sem border-radius, sem padding) | — |
+
+> **Nota de Auditoria:** Conforme a regra suprema de homologação, como o arquivo com hash `5838127cd2ca9528b31d671d49c1d072ae2b336fe22bc1bc0ad4b590914f0d8c` não existe no sistema de arquivos local, a homologação final da logo permanece PARADA, aguardando que o cliente disponibilize o arquivo no ambiente.
 
 ---
 
@@ -35,4 +34,5 @@ Este manifesto registra a identidade técnica e integridade criptográfica (SHA-
 | **Dimensões Web** | 1024 × 571 px |
 | **Tamanho Web** | 51.232 bytes |
 | **SHA-256 Web** | `dd70155e32b0bd7015db2b4593bcb1ef9a95ef6bb71b68000240326156fe5669` |
+| **Status** | **HOMOLOGADO E INTEGRADO** |
 | **Descrição Visual** | Médica em consultório clínico moderno, apoiada sobre mesa de madeira com iPad de prontuário e computador iMac ao lado, correspondente à fotografia original do Master Reference V1.2. |
