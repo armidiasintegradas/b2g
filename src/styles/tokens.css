@@ -1,0 +1,47 @@
+:root {
+  /* Surfaces & Backgrounds */
+  --bg-canvas: #080b10;
+  --bg-surface-alt: #0a0e15;
+  --bg-card: #0b1019;
+  --bg-card-highlight: #0d1522;
+  --bg-card-active: #0e1726;
+  --bg-footer: #0a0d13;
+  --bg-header: rgba(8, 11, 16, 0.88);
+
+  /* Accents & Brand Cyan */
+  --color-brand-cyan: #00b2d8;
+  --color-brand-cyan-light: #38bdf8;
+  --color-brand-cyan-emphasis: #00b8e6;
+  --color-brand-blue-dark: #004d80;
+  --color-brand-blue-mid: #0077b6;
+  --color-cyan-glow: rgba(0, 178, 216, 0.18);
+  --color-cyan-subtle: rgba(0, 178, 216, 0.08);
+
+  /* Typography Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+
+  /* Borders & Dividers */
+  --border-default: #1a2333;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-active: rgba(0, 178, 216, 0.45);
+  --divider-line: #161f2e;
+
+  /* Layout & Grid */
+  --max-width-content: 1240px;
+  --max-width-narrow: 980px;
+  --gutter-desktop: 24px;
+  --section-spacing-y: 96px;
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  /* Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
