@@ -80,4 +80,24 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.match(html, /hero-media-pending/, 'Deve conter classe hero-media-pending no Hero');
     assert.doesNotMatch(html, /hero-medica-tablet\.webp/, 'Não deve apontar para asset substituto inexistente');
   });
+
+  await t.test('9. Ausência estrita de claims excessivos (Final Copy Lock V1.2)', () => {
+    assert.doesNotMatch(html, /Autoridade Garantida/i, 'NÃO deve conter claim "Autoridade Garantida"');
+    assert.doesNotMatch(html, /Fast Load <1s/i, 'NÃO deve conter claim "Fast Load <1s"');
+    assert.doesNotMatch(html, /modelo proprietário/i, 'NÃO deve conter claim de "modelo proprietário"');
+    assert.doesNotMatch(html, /garantir que cada centavo/i, 'NÃO deve conter claim "garantir que cada centavo"');
+    assert.doesNotMatch(html, /Métricas Reais &amp; Governança de Performance/i, 'NÃO deve conter headline antiga de métricas');
+    assert.doesNotMatch(html, /Prestação Auditada \/ Ética Médica/i, 'NÃO deve conter badge antiga "Prestação Auditada / Ética Médica"');
+  });
+
+  await t.test('10. Presença de copy homologada (Final Copy Lock V1.2)', () => {
+    assert.match(html, /O que acompanhamos para melhorar performance\./, 'Deve conter nova headline de performance');
+    assert.match(html, /Indicadores que ajudam a entender eficiência de mídia, conversão e oportunidades de otimização\./, 'Deve conter nova subheadline de performance');
+    assert.match(html, /Estrutura preparada para cases e resultados autorizados\./, 'Deve conter novo título de cases');
+    assert.match(html, /A B2G conecta mídia, conversão e mensuração para criar uma operação de aquisição mais clara, integrada e orientada por dados\./, 'Deve conter novo texto de governança/conexão');
+    assert.match(html, /Vamos analisar sua operação digital e identificar oportunidades de crescimento e melhoria da sua estrutura de aquisição\./, 'Deve conter nova lead do CTA final');
+    assert.match(html, /<span class="editorial-tag">Posicionamento<\/span>/, 'Deve conter tag "Posicionamento"');
+    assert.match(html, /<span class="editorial-tag">Performance Web<\/span>/, 'Deve conter tag "Performance Web"');
+    assert.match(html, /Mensuração &amp; Relatórios/, 'Deve conter badge "Mensuração & Relatórios"');
+  });
 });
