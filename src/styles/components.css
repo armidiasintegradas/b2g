@@ -261,14 +261,14 @@
 }
 
 .editorial-col {
-  padding: 36px 28px;
+  padding: 32px 24px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 380px;
+  min-height: 330px;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -282,12 +282,24 @@
   flex-direction: column;
 }
 
+.editorial-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
 .editorial-num {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
-  color: var(--text-dim);
+  color: #334155;
   letter-spacing: -0.02em;
-  margin-bottom: 24px;
+}
+
+.editorial-plus {
+  font-size: 18px;
+  color: #334155;
+  font-weight: 400;
 }
 
 .editorial-title {
@@ -308,7 +320,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 32px;
+  margin-top: 28px;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -353,6 +365,18 @@
   gap: 16px;
   margin-top: 48px;
   margin-bottom: 32px;
+  position: relative;
+}
+
+.flow-stages-container::before {
+  content: '';
+  position: absolute;
+  top: 38px;
+  left: 60px;
+  right: 60px;
+  height: 1px;
+  background: var(--border-default);
+  z-index: 0;
 }
 
 .flow-stage-card {
@@ -363,12 +387,35 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  z-index: 1;
 }
 
 .flow-stage-card.is-focal {
   border-color: var(--color-brand-cyan);
   background-color: var(--bg-card-highlight);
   box-shadow: 0 0 24px var(--color-cyan-glow);
+}
+
+.stage-num-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.stage-num-badge.focal-num {
+  background-color: var(--color-brand-cyan);
+  border-color: var(--color-brand-cyan);
+  color: #ffffff;
+  box-shadow: 0 0 12px var(--color-brand-cyan);
 }
 
 .stage-badge {
@@ -380,7 +427,7 @@
   margin-bottom: 8px;
 }
 
-.flow-stage-card.is-focal .stage-badge {
+.stage-badge.focal-kicker {
   color: var(--color-brand-cyan-light);
 }
 
@@ -406,7 +453,7 @@
   color: var(--text-muted);
 }
 
-.flow-stage-card.is-focal .stage-tag {
+.stage-tag.focal-tag {
   color: var(--color-brand-cyan-emphasis);
 }
 
@@ -482,8 +529,17 @@
   border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.tool-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background-color: var(--color-brand-cyan);
+  box-shadow: 0 0 6px var(--color-brand-cyan);
 }
 
 .tool-badge:hover {
@@ -507,14 +563,28 @@
 }
 
 .audit-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px 18px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-card);
+}
+
+.audit-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.audit-val {
   font-size: 12px;
   font-weight: 600;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 8px 14px;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  margin-top: 2px;
 }
 
 .metrics-grid-v12 {
@@ -604,6 +674,22 @@
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-secondary);
+}
+
+.presentation-action-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.presentation-subtext {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  text-align: center;
+  max-width: 200px;
+  line-height: 1.4;
 }
 
 /* ==========================================================================
