@@ -694,3 +694,132 @@
   font-size: 12px;
   color: var(--text-dim);
 }
+
+/* ==========================================================================
+   RESPONSIVIDADE (MOBILE & TABLET FIDELITY)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .solucoes-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .editorial-col:nth-child(2) {
+    border-right: none;
+  }
+
+  .editorial-col:nth-child(3) {
+    border-left: 1px solid var(--divider-line);
+    border-top: 1px solid var(--divider-line);
+  }
+
+  .editorial-col:nth-child(4) {
+    border-top: 1px solid var(--divider-line);
+  }
+
+  .flow-stages-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metrics-grid-v12 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .presentation-module {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 64px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .hero-section {
+    padding-top: 110px;
+    padding-bottom: 60px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-lead {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-pillars {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .solucoes-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .editorial-col {
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--divider-line);
+    min-height: auto;
+    padding: 32px 0;
+  }
+
+  .flow-stages-container {
+    grid-template-columns: 1fr;
+  }
+
+  .governance-callout {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .performance-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .metrics-grid-v12 {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-final-title {
+    font-size: 30px;
+  }
+
+  .footer-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
