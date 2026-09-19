@@ -104,7 +104,7 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
   await t.test('7. Ausência de claims jurídicos/CFM não autorizados no footer', () => {
     assert.doesNotMatch(html, /Manual de Publicidade Médica/i, 'Não deve conter declaração regulatória não autorizada no footer');
     assert.doesNotMatch(html, /Conselho Federal de Medicina \(CFM\)\.<\/p>/i, 'Não deve conter claim de conformidade CFM no rodapé');
-    assert.match(html, /&copy; 2026 B2G Marketing Digital e Treinamentos\./, 'Deve conter copyright provisório conforme regra');
+    assert.match(html, /&copy; B2G\. Todos os direitos reservados\..*AR Mídias Integradas/, 'Deve conter créditos atualizados do rodapé');
   });
 
   await t.test('8. Fotografia do Hero canônica integrada (public/media/hero-doctor-bg.webp)', () => {
