@@ -6,7 +6,7 @@ Este manifesto registra a identidade técnica e integridade criptográfica (SHA-
 
 ---
 
-## 1. Logo do Menu (Header Navbar) — Homologada
+## 1. Logo do Menu & Rodapé (Header Navbar e Footer) — Homologada
 
 | Atributo | Especificação Canônica |
 | :--- | :--- |
@@ -16,8 +16,9 @@ Este manifesto registra a identidade técnica e integridade criptográfica (SHA-
 | **Formato** | PNG RGBA (vetor branco puro com transparência) |
 | **Tamanho** | 34.260 bytes |
 | **SHA-256** | `b0aeae4a0240ff820e2502d44a0dbbb15b9f0d9f564f4aa38269e0b08f238595` |
-| **Status** | **HOMOLOGADO E INTEGRADO NO MENU/HEADER** |
-| **Uso no Layout** | Header navbar com fundo escuro (`height: 26px; width: 73px; object-fit: contain;`) |
+| **Status** | **HOMOLOGADO E INTEGRADO NO MENU/HEADER E NO RODAPÉ** |
+| **Uso no Header** | Header navbar com fundo escuro (`height: 48px; width: 135px; object-fit: contain;` — ampliada em 100%) |
+| **Uso no Rodapé** | Footer row com fundo escuro (`height: 28px; width: 79px; object-fit: contain;`) |
 
 ---
 

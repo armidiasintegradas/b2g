@@ -45,8 +45,9 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     const logoHash = createHash('sha256').update(readFileSync(logoPath)).digest('hex');
     assert.strictEqual(logoHash, 'ff9e102e6216d68122496f64097120521fd1b99f9b879118ac661d836062dd8d', 'SHA-256 da logo canônica deve corresponder ao master original homologado');
 
-    // Validação da logo do menu (vetor branco homologado para fundo escuro)
-    assert.match(html, /public\/brand\/b2g-logo-menu\.png/, 'Header deve referenciar b2g-logo-menu.png');
+    // Validação da logo do menu e rodapé (vetor branco homologado para fundo escuro)
+    assert.match(html, /<header[^>]*>[\s\S]*?public\/brand\/b2g-logo-menu\.png/, 'Header deve referenciar b2g-logo-menu.png');
+    assert.match(html, /<footer[^>]*>[\s\S]*?public\/brand\/b2g-logo-menu\.png/, 'Footer deve referenciar b2g-logo-menu.png');
     const menuLogoPath = resolve(rootDir, 'public/brand/b2g-logo-menu.png');
     assert.ok(existsSync(menuLogoPath), 'Arquivo b2g-logo-menu.png deve existir fisicamente');
     const menuLogoHash = createHash('sha256').update(readFileSync(menuLogoPath)).digest('hex');
