@@ -34,8 +34,8 @@ const footer = readFileSync(resolve(rootDir, 'src/sections/footer.html'), 'utf-8
 
 // 4. Montar página de produção index.html
 const rendered = shell
-  .replace('{{PAGE_TITLE}}', 'B2G — Marketing para Clínicas e Médicos Orientado a Aquisição')
-  .replace('{{PAGE_DESCRIPTION}}', 'Tráfego pago, conteúdo, landing pages e mensuração trabalhando juntos para transformar presença digital em oportunidades reais para clínicas e médicos.')
+  .replaceAll('{{PAGE_TITLE}}', 'B2G Marketing Digital e Treinamentos.')
+  .replaceAll('{{PAGE_DESCRIPTION}}', 'Tráfego pago, conteúdo, landing pages e mensuração trabalhando juntos para transformar presença digital em oportunidades reais.')
   .replace('{{HEADER}}', header)
   .replace('{{HERO}}', hero)
   .replace('{{SOLUCOES}}', solucoes)

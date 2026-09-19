@@ -35,7 +35,23 @@ Gerados a partir do asset vetorial branco canônico:
 
 ---
 
-## 3. Logo Master Institucional (Open Graph)
+## 3. Asset de Compartilhamento WhatsApp / Open Graph — Homologado
+
+Card otimizado com a marca centralizada dentro da safe zone (1:1 square e 1.91:1 landscape), garantindo visualização integral sem cortes no WhatsApp, Telegram e redes sociais:
+
+| Atributo | Especificação Canônica |
+| :--- | :--- |
+| **Path no Projeto** | `public/brand/b2g-whatsapp-share.png` |
+| **Dimensões** | `1200 × 630 px` (Standard Open Graph 1.91:1) |
+| **Safe Zone Central** | `630 × 630 px` (quadrado central para previews 1:1) |
+| **Área Ocupada pela Logo** | `480 × 171 px` centralizada (margem de 75px em crop quadrado) |
+| **Fundo** | Sólido `#080b11` (sem transparência, evitando artefatos de renderização no WhatsApp) |
+| **Tamanho** | 24.269 bytes (super leve, < 300 KB exigido pelo WhatsApp) |
+| **Status** | **HOMOLOGADO E INTEGRADO NOS TAGS OPEN GRAPH** |
+
+---
+
+## 4. Logo Master Institucional (Arquivo Original do Cliente)
 
 | Atributo | Alvo Requerido pelo Cliente | Asset Atual no Ambiente |
 | :--- | :--- | :--- |

@@ -38,8 +38,12 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.strictEqual(sectionsCount, 5, 'Deve conter exatamente 5 seções filhas dentro do <main> (+ 1 header + 1 footer = 7 seções no total)');
   });
 
-  await t.test('2. Logo master correta com validação de SHA-256 e assets de marca/favicon', () => {
-    assert.match(html, /public\/brand\/b2g-logo-oficial\.png/, 'Deve referenciar o master oficial b2g-logo-oficial.png');
+  await t.test('2. Logo master, share WhatsApp, e assets de marca/favicon', () => {
+    // Validação da imagem de compartilhamento WhatsApp / Open Graph
+    assert.match(html, /public\/brand\/b2g-whatsapp-share\.png/, 'Deve referenciar o asset otimizado de compartilhamento b2g-whatsapp-share.png');
+    const sharePath = resolve(rootDir, 'public/brand/b2g-whatsapp-share.png');
+    assert.ok(existsSync(sharePath), 'Arquivo b2g-whatsapp-share.png deve existir fisicamente');
+
     const logoPath = resolve(rootDir, 'public/brand/b2g-logo-oficial.png');
     assert.ok(existsSync(logoPath), 'Arquivo b2g-logo-oficial.png deve existir fisicamente');
     const logoHash = createHash('sha256').update(readFileSync(logoPath)).digest('hex');
@@ -63,6 +67,10 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.ok(existsSync(resolve(rootDir, 'public/brand/favicon-16x16.png')), 'favicon-16x16.png deve existir');
     assert.ok(existsSync(resolve(rootDir, 'public/brand/apple-touch-icon.png')), 'apple-touch-icon.png deve existir');
     assert.ok(existsSync(resolve(rootDir, 'public/brand/favicon.ico')), 'favicon.ico deve existir');
+
+    // Validação de Page Title e Page Description
+    assert.match(html, /<title>B2G Marketing Digital e Treinamentos\.<\/title>/, 'Deve conter o page title solicitado');
+    assert.match(html, /<meta name="description" content="Tráfego pago, conteúdo, landing pages e mensuração trabalhando juntos para transformar presença digital em oportunidades reais\."/, 'Deve conter a page description solicitada');
   });
 
   await t.test('3. Métricas homologadas V1.2 presentes', () => {
