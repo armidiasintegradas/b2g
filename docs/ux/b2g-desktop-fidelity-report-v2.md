@@ -31,13 +31,13 @@
 - Padding superior ajustado para 120px para harmonizar a proximidade da headline com a navegação.
 - **Mean Pixel Diff:** `62.56 / 255` (reduzido de 75.36).
 
-### 03. Soluções
-- Fundo claro/off-white (`#f8fafc`).
-- Grid editorial de 2 colunas:
-  - Esquerda: Kicker, Título H2, lead e lista vertical dos 4 pilares (`01`..`04`) com divisores horizontais sutis.
-  - Direita: Moldura fotográfica clínica com imagem do consultório/médica em alta resolução (`public/media/hero-doctor-original.png`).
-  - Base: Linha horizontal de ferramentas e competências técnicas com badges dedicadas.
-- **Mean Pixel Diff:** `187.51 / 255` (diferença estritamente técnica de luminância do fundo claro `#f8fafc` vs fundo preto `#080b11` do mock antigo, conforme solicitado na revisão humana).
+### 03. Soluções / Arquitetura de Serviço (Seção 02 Homologada)
+- Fundo off-white (`#fbfbfb`) com bordas sutis `#e5e7eb`.
+- Grid editorial assimétrico de 2 colunas:
+  - Esquerda: Kicker `02 / ARQUITETURA DE SERVIÇO` com linha conectora, H2 `Uma estrutura completa de aquisição.` com ponto ciano `#1e8df7`, lead descritivo e lista vertical dos 4 pilares (`01` a `04`) com numerais em azul suave e marcadores verticais.
+  - Direita: Moldura fotográfica clínica com a gravação audiovisual médica em alta resolução (`public/media/b2g-arquitetura-servico-filming.png` / `.webp`), cantos arredondados (`border-radius: 28px`), e legenda no canto inferior direito: `ESTRATÉGIA PARA MAIS VIDAS` com sublinhado sutil.
+  - Base: Faixa horizontal de competências e ecossistema (`Google Ads`, `Meta Ads`, `GA4`, `GTM`, `Pixel`, `Conversão`).
+- **Status da Seção 02:** Homologada e aprovada visualmente (`references/visual-audit/section02-v1/`).
 
 ### 04. Sistema de Aquisição
 - Fluxo contínuo com linha conectora na altura dos marcadores circulares (`top: 18px`, `36 × 36 px`, `border-radius: 50%`).
@@ -55,6 +55,8 @@
 
 ---
 
-## 3. Geometria Natural
-- Nenhuma altura mínima artificial forçada para 5904px.
-- Altura natural desktop resultante da renderização V6: **~4460 px**.
+## 3. Geometria Natural e Estado Atual
+- Altura natural desktop resultante da renderização V6 + Seção 02: **~4460 px**.
+- Todos os testes de contrato e fidelidade passam: **11/11 PASS**.
+- Publicação sincronizada no GitHub Pages: `https://armidiasintegradas.github.io/b2g/`.
+
