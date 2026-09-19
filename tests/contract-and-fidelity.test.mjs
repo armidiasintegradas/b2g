@@ -131,9 +131,14 @@ test('B2G Contract & Fidelity Test Suite', async (t) => {
     assert.match(html, /O que acompanhamos para melhorar performance\./, 'Deve conter nova headline de performance');
     assert.match(html, /Indicadores que ajudam a entender eficiência de mídia, conversão e oportunidades de otimização\./, 'Deve conter nova subheadline de performance');
     assert.match(html, /Estrutura preparada para cases e resultados autorizados\./, 'Deve conter novo título de cases');
-    assert.match(html, /A B2G conecta mídia, conversão e mensuração para criar uma operação de aquisição mais clara, integrada e orientada por dados\./, 'Deve conter novo texto de governança/conexão');
-    assert.match(html, /<span class="[^"]*editorial-tag[^"]*">Posicionamento<\/span>/, 'Deve conter tag "Posicionamento"');
-    assert.match(html, /<span class="[^"]*editorial-tag[^"]*">Performance Web<\/span>/, 'Deve conter tag "Performance Web"');
+    assert.match(html, /Uma estrutura<br>completa de aquisição/, 'Deve conter headline de Arquitetura de Serviço');
+    assert.match(html, /A B2G estrutura mídia, conteúdo, landing pages e mensuração/, 'Deve conter descrição de Arquitetura de Serviço');
+    assert.match(html, /Tráfego Pago/, 'Deve conter item Tráfego Pago');
+    assert.match(html, /Tracking &amp; Dados/, 'Deve conter item Tracking & Dados');
+    assert.match(html, /Conteúdo &amp; Autoridade/, 'Deve conter item Conteúdo & Autoridade');
+    assert.match(html, /Landing Pages/, 'Deve conter item Landing Pages');
+    assert.match(html, /ESTRATÉGIA/, 'Deve conter caption da foto de Arquitetura de Serviço');
+    assert.match(html, /b2g-arquitetura-servico-filming/, 'Deve referenciar asset de imagem da Seção 02');
     assert.match(html, /Mensuração &amp; Relatórios/, 'Deve conter badge "Mensuração & Relatórios"');
   });
 });
